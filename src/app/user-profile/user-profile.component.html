@@ -1,0 +1,15 @@
+<div class="user-container">
+    <h2 class="user-name">{{ user.firstName }} {{ user.name }}</h2>
+    <img class="user-photo" [src]="user.photo" alt="">
+    <div *ngIf="showAge">
+        <p>{{ user.age }} ans</p>
+      </div>
+      <div>
+        <button (click)="showAge = !showAge">{{ showAge ? "Masquer l'âge" : "Afficher l'âge" }}</button>
+      </div>
+    <p class="user-quote"><em>{{ user.quote }}</em></p>
+    <div>
+        <input type="text" [(ngModel)]="quoteEdit" placeholder="Saisissez une citation">
+        <button (click)="editQuote()">Modifier</button>
+      </div>
+</div>
